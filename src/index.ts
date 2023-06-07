@@ -24,7 +24,6 @@ declare module '@tiptap/core' {
     }
 }
 
-export const inputRegex = /(?:^|\s)(!\[(.+|:?)]\((\S+)(?:(?:\s+)["'](\S+)["'])?\))$/
 
 export default Image.extend<ImageOptions>({
     name: 'drawIoExtension',
@@ -41,10 +40,12 @@ export default Image.extend<ImageOptions>({
     },
 
     addNodeView() {
-        return ({node}) => {
+        return ({editor, node, getPos, HTMLAttributes, decorations, extension}) => {
             const dom = document.createElement('img')
             dom.src = node.attrs.src;
-
+            const {view} = editor;
+            console.log({editor, node, getPos, HTMLAttributes, decorations, extension})
+            const $this = this;
             dom.addEventListener(this.options.openDialog, (evt) => {
                 const dialog = document.createElement('dialog');
                 dialog.style.border = '0';
@@ -81,7 +82,10 @@ export default Image.extend<ImageOptions>({
                             }), '*');
                             break;
                         case 'export':
-                            source.setAttribute('src', msg.data);
+                            // @ts-ignore
+                            view.dispatch(view.state.tr.setNodeMarkup(getPos(), undefined, {
+                                src: msg.data,
+                            }))
                             break;
                         case 'exit':
                             window.removeEventListener('message', receive);
@@ -108,6 +112,13 @@ export default Image.extend<ImageOptions>({
                         alt: '',
                         title: ''
                     },
+                })
+            },
+            update: (image) => ({commands}) => {
+                return commands.updateAttributes({
+                    src: image,
+                    alt: '',
+                    title: ''
                 })
             },
         }

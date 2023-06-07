@@ -1,7 +1,7 @@
 {
   "name": "@rcode-link/tiptap-drawio",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Extension of tiptap image extension. Used to for drawio plugin.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,5 +27,20 @@
   },
   "dependencies": {
     "@tiptap/extension-image": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radans/tiptap-drawio-extension.git"
+  },
+  "keywords": [
+    "tiptap",
+    "drawio",
+    "extension"
+  ],
+  "author": "Radan Stupar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radans/tiptap-drawio-extension/issues"
+  },
+  "homepage": "https://github.com/radans/tiptap-drawio-extension#readme"
 }
