@@ -1,6 +1,10 @@
 # DrawIoExtension
 
 Extension of tiptap image extension. Used to for drawio plugin.
+![](./images/addedImage.png)
+
+![](./images/openedDialog.png)
+
 
 ## Usage
 
@@ -17,8 +21,9 @@ import drawIoExtension from '@rcode-link/tiptap-drawio';
 
 const editor = Editor({
     extensions: [
-        StarterKit,
-        customComment
+        drawIoExtension.configure({
+            openDialog: 'dblclick'
+        })
     ]
 })
 ```
@@ -45,7 +50,7 @@ place where it can be chagned.
 
 when image is inserted is hows base image with start square.
 
-![](./baseImageExample.png)
+![](images/baseImageExample.png)
 
 if you want to use some different image just pass base64 png to this property
 
