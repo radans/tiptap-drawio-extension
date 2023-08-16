@@ -4,12 +4,6 @@
 
 https://github.com/radans/tiptap-drawio-extension/assets/7635076/e757bcda-befe-43eb-a342-fe77acf99978
 
-Extension of tiptap image extension. Used to for drawio plugin.
-![](./images/addedImage.png)
-
-![](./images/openedDialog.png)
-
-
 ## Usage
 
 ### Installation
