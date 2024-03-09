@@ -1,6 +1,6 @@
 {
   "name": "@rcode-link/tiptap-drawio",
-  "version": "1.0.2",
+  "version": "1.0.21",
   "description": "Extension of tiptap image extension. Used to for drawio plugin.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
