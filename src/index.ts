@@ -34,6 +34,8 @@ export default Image.extend<ImageOptions>({
             allowBase64: false,
             drawIoLink: url,
             baseImage: baseImage,
+            width: '99vw',
+            height = '99vh',
             openDialog: 'click',
             HTMLAttributes: {},
         }
@@ -54,8 +56,8 @@ export default Image.extend<ImageOptions>({
                 const iframe = document.createElement('iframe');
                 iframe.setAttribute('frameborder', '0');
                 iframe.setAttribute('src', this.options.drawIoLink);
-                iframe.style.width = '100vh';
-                iframe.style.height = '90vh';
+                iframe.style.width =  this.options.width;
+                iframe.style.height = this.options.height;
 
                 const source = evt.target as HTMLElement;
                 dialog.appendChild(iframe);
